@@ -1,0 +1,37 @@
+.review-container {
+    min-height: 100vh;
+    background: #101010;
+    padding: 120px 20px;
+}
+
+.review-wrapper {
+    max-width: 900px;
+    margin: auto;
+    background: #181818;
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid #2a2a2a;
+}
+
+.review-wrapper h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.review-meta {
+    color: #f4b400;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.review-image {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.review-content {
+    line-height: 1.8;
+    color: #ddd;
+    font-size: 18px;
+}

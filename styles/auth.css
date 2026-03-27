@@ -1,0 +1,136 @@
+/*  RESET  */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background:#0f0f0f;
+    color:white;
+    height:100vh;
+}
+
+/*  CENTER WRAPPER  */
+
+.auth-wrapper{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+        linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.9)),
+        url("../images/background.png");
+
+    background-size:cover;
+    background-position:center;
+}
+
+/*  CARD  */
+
+.auth-card{
+    width:380px;
+    padding:40px;
+
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,0.15);
+
+    box-shadow:0 20px 40px rgba(0,0,0,0.6);
+}
+
+/*  TITLE  */
+
+.auth-card h2{
+    text-align:center;
+    margin-bottom:5px;
+}
+
+.auth-card span{
+    color:#5f6abd;
+}
+
+.subtitle{
+    text-align:center;
+    color:#aaa;
+    margin-bottom:25px;
+    font-size:14px;
+}
+
+/*  INPUTS  */
+
+.input-group{
+    margin-bottom:18px;
+    display:flex;
+    flex-direction:column;
+}
+
+.input-group label{
+    font-size:13px;
+    margin-bottom:6px;
+    color:#ccc;
+}
+
+.input-group input{
+    padding:12px;
+    border-radius:6px;
+    border:none;
+    outline:none;
+
+    background:#1c1c1c;
+    color:white;
+    border:1px solid #2a2a2a;
+
+    transition:0.3s;
+}
+
+.input-group input:focus{
+    border-color:#5f6abd;
+    box-shadow:0 0 8px rgba(95,106,189,0.4);
+}
+
+/*  BUTTON  */
+
+.auth-btn{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+
+    background:#5f6abd;
+    border:none;
+    color:white;
+    font-weight:bold;
+    border-radius:6px;
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.auth-btn:hover{
+    background:#350B57;
+}
+
+/*  SWITCH LINK  */
+
+.switch{
+    text-align:center;
+    margin-top:18px;
+    font-size:14px;
+    color:#aaa;
+}
+
+.switch a{
+    color:#5f6abd;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.switch a:hover{
+    text-decoration:underline;
+}
