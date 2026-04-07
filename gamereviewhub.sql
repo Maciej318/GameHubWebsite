@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 28, 2026 at 03:57 PM
+-- Generation Time: Apr 07, 2026 at 10:24 PM
 -- Wersja serwera: 10.4.32-MariaDB
 -- Wersja PHP: 8.2.12
 
@@ -53,6 +53,19 @@ INSERT INTO `reviews` (`id`, `title`, `content`, `image`, `rating`, `created_at`
 -- --------------------------------------------------------
 
 --
+-- Struktura tabeli dla tabeli `review_likes`
+--
+
+CREATE TABLE `review_likes` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `review_id` int(11) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Struktura tabeli dla tabeli `users`
 --
 
@@ -71,7 +84,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `role`, `created_at`) VALUES
 (1, 'Maciej', 'karol@wp.pl', '$2y$10$4Mly/lFtkOFUk9XGEO1PsO0q4dnewmsP60uRyLYEpALvjFASr350G', 'user', '2026-03-25 16:10:15'),
-(2, 'kacper', 'kacper@elo.pl', '$2y$10$OqC4bqwxLSyGVJdFXYzbKeCqlROlG3GP9onwMfR6Y3hDjzGxyuvZW', 'user', '2026-03-26 12:25:14');
+(2, 'kacper', 'kacper@elo.pl', '$2y$10$OqC4bqwxLSyGVJdFXYzbKeCqlROlG3GP9onwMfR6Y3hDjzGxyuvZW', 'user', '2026-03-26 12:25:14'),
+(4, 'karol', 'eloelo@wp.pl', '$2y$10$WOXO8A/lyQ5CA1F3xo9UGOlITTrpWgCdj7uaSNxheKlX8iP66L.da', 'user', '2026-04-01 14:06:52');
 
 --
 -- Indeksy dla zrzutów tabel
@@ -82,6 +96,13 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`, `role`, `created_at`
 --
 ALTER TABLE `reviews`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indeksy dla tabeli `review_likes`
+--
+ALTER TABLE `review_likes`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `user_id` (`user_id`,`review_id`);
 
 --
 -- Indeksy dla tabeli `users`
@@ -101,10 +122,16 @@ ALTER TABLE `reviews`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
+-- AUTO_INCREMENT for table `review_likes`
+--
+ALTER TABLE `review_likes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
